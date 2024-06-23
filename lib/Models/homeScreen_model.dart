@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:learn_html_basic/Views/introduction.dart';
+import 'package:learn_html_basic/Screens/documentStructureScreen.dart';
+
+import '../Screens/introduction.dart';
 
 final List<Map<String, dynamic>> gridMap = [
   {
     "image": "assets/images/html.jpg",
     "title": "Introduction to HTML",
-    "route": const IntroductionPage(),
+    "route": IntroductionScreen(),
   },
   {
     "image": "assets/images/html.jpg",
     "title": "HTML Document Structure",
+    "route": Documentstructurescreen(),
   },
   {
     "image": "assets/images/html.jpg",

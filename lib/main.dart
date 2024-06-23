@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learn_html_basic/Views/homeScreen.dart';
+import 'package:learn_html_basic/Screens/homeScreen.dart';
 
 class learn_html extends StatelessWidget {
   const learn_html({super.key});
