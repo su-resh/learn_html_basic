@@ -5,73 +5,73 @@ import '../Screens/introduction.dart';
 
 final List<Map<String, dynamic>> gridMap = [
   {
-    "image": "./images/introduction.png",
+    "image": "assets/images/introduction.png",
     "title": "Introduction to HTML",
     "route": IntroductionScreen(),
   },
   {
-    "image": "./images/documentstructure.png",
+    "image": "assets/images/documentstructure.png",
     "title": "HTML Document Structure",
     "route": Documentstructurescreen(),
   },
   {
-    "image": "./images/htmltags.png",
+    "image": "assets/images/htmltags.png",
     "title": "Tags And Elements",
   },
   {
-    "image": "./images/attribute.png",
+    "image": "assets/images/attribute.png",
     "title": "HTML Attributes",
   },
   {
-    "image": "./images/heading.png",
+    "image": "assets/images/heading.png",
     "title": "Headings And Paragraphs",
   },
   {
-    "image": "./images/textformat.png",
+    "image": "assets/images/textformat.png",
     "title": "HTML Text Formating",
   },
   {
-    "image": "./images/list.png",
+    "image": "assets/images/list.png",
     "title": "Lists",
   },
   {
-    "image": "./images/link.png",
+    "image": "assets/images/link.png",
     "title": "Links and Anchor Tags",
   },
   {
-    "image": "./images/introduction.png",
+    "image": "assets/images/introduction.png",
     "title": "Images",
   },
   {
-    "image": "./images/introduction.png",
+    "image": "assets/images/introduction.png",
     "title": "Tables",
   },
   {
-    "image": "./images/introduction.png",
+    "image": "assets/images/introduction.png",
     "title": "HTML Forms",
   },
   {
-    "image": "./images/introduction.png",
+    "image": "assets/images/introduction.png",
     "title": "Semantic Elements",
   },
   {
-    "image": "./images/introduction.png",
+    "image": "assets/images/introduction.png",
     "title": "HTML comments",
   },
   {
-    "image": "./images/introduction.png",
+    "image": "assets/images/introduction.png",
     "title": "HTML Entities",
   },
   {
-    "image": "./images/introduction.png",
+    "image": "assets/images/introduction.png",
     "title": "HTML Iframes",
   },
   {
-    "image": "./images/introduction.png",
+    "image": "assets/images/introduction.png",
     "title": "Embeding Media",
   },
   {
-    "image": "./images/introduction.png",
+    "image": "assets/images/introduction.png",
     "title": "Certificates",
   },
 ];
