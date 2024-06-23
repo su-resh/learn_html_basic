@@ -5,73 +5,73 @@ import '../Screens/introduction.dart';
 
 final List<Map<String, dynamic>> gridMap = [
   {
-    "image": "assets/images/html.jpg",
+    "image": "./images/introduction.png",
     "title": "Introduction to HTML",
     "route": IntroductionScreen(),
   },
   {
-    "image": "assets/images/html.jpg",
+    "image": "./images/documentstructure.png",
     "title": "HTML Document Structure",
     "route": Documentstructurescreen(),
   },
   {
-    "image": "assets/images/html.jpg",
+    "image": "./images/htmltags.png",
     "title": "Tags And Elements",
   },
   {
-    "image": "assets/images/html.jpg",
+    "image": "./images/attribute.png",
     "title": "HTML Attributes",
   },
   {
-    "image": "assets/images/html.jpg",
+    "image": "./images/heading.png",
     "title": "Headings And Paragraphs",
   },
   {
-    "image": "assets/images/html.jpg",
+    "image": "./images/textformat.png",
     "title": "HTML Text Formating",
   },
   {
-    "image": "assets/images/html.jpg",
+    "image": "./images/list.png",
     "title": "Lists",
   },
   {
-    "image": "assets/images/html.jpg",
+    "image": "./images/link.png",
     "title": "Links and Anchor Tags",
   },
   {
-    "image": "assets/images/html.jpg",
+    "image": "./images/introduction.png",
     "title": "Images",
   },
   {
-    "image": "assets/images/html.jpg",
+    "image": "./images/introduction.png",
     "title": "Tables",
   },
   {
-    "image": "assets/images/html.jpg",
+    "image": "./images/introduction.png",
     "title": "HTML Forms",
   },
   {
-    "image": "assets/images/html.jpg",
+    "image": "./images/introduction.png",
     "title": "Semantic Elements",
   },
   {
-    "image": "assets/images/html.jpg",
+    "image": "./images/introduction.png",
     "title": "HTML comments",
   },
   {
-    "image": "assets/images/html.jpg",
+    "image": "./images/introduction.png",
     "title": "HTML Entities",
   },
   {
-    "image": "assets/images/html.jpg",
+    "image": "./images/introduction.png",
     "title": "HTML Iframes",
   },
   {
-    "image": "assets/images/html.jpg",
+    "image": "./images/introduction.png",
     "title": "Embeding Media",
   },
   {
-    "image": "assets/images/html.jpg",
+    "image": "./images/introduction.png",
     "title": "Certificates",
   },
 ];

@@ -24,11 +24,9 @@ class IntroductionScreen extends StatelessWidget {
                 child: ListTile(
                   title: Text(
                     "What is HTML?",
-                    style: header(),
                   ),
                   subtitle: Text(
                     "HTML (HyperText Markup Language) is the standard language used for creating and designing web pages. It serves as the backbone of web content, enabling the structuring and formatting of text, images, links, and other multimedia elements on the internet. HTML is a markup language, which means it uses tags to annotate content and give it meaning within the context of a web page.",
-                    style: textbody(),
                   ),
                 ),
               ),
@@ -36,7 +34,6 @@ class IntroductionScreen extends StatelessWidget {
                 child: ListTile(
                   title: Text(
                     "History and Versions of HTML",
-                    style: header(),
                   ),
                   subtitle: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -85,7 +82,6 @@ class IntroductionScreen extends StatelessWidget {
                 child: ListTile(
                   title: Text(
                     "Importance of HTML in Web Development",
-                    style: header(),
                   ),
                   subtitle: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -121,8 +117,3 @@ class IntroductionScreen extends StatelessWidget {
     );
   }
 }
-
-TextStyle header() =>
-    const TextStyle(fontSize: 20, fontWeight: FontWeight.bold);
-TextStyle textbody() => const TextStyle(
-    fontSize: 16, fontWeight: FontWeight.normal, color: Colors.black);

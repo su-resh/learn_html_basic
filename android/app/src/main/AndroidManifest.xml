@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="learn_html_basic"
+        android:label="Learn HTML Basic"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

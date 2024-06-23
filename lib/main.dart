@@ -6,7 +6,11 @@ class learn_html extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Homescreen();
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: "Learn HTML Basic ",
+      home: Homescreen(),
+    );
   }
 }
 
