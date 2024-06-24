@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:learn_html_basic/Screens/documentStructureScreen.dart';
+import 'package:learn_html_basic/Screens/documentstructure_screen.dart';
 
-import '../Screens/introduction.dart';
+import '../Screens/introduction_screen.dart';
 
 final List<Map<String, dynamic>> gridMap = [
   {
@@ -12,7 +12,7 @@ final List<Map<String, dynamic>> gridMap = [
   {
     "image": "assets/images/documentstructure.png",
     "title": "HTML Document Structure",
-    "route": Documentstructurescreen(),
+    "route": DocumentstructureScreen(),
   },
   {
     "image": "assets/images/htmltags.png",

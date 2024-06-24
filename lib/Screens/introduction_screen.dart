@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learn_html_basic/Themes/text_size.dart';
 
 import '../Models/historyitem.dart';
 import '../Models/importanceitem.dart';
@@ -23,6 +24,7 @@ class IntroductionScreen extends StatelessWidget {
               Card(
                 child: ListTile(
                   title: Text(
+                    style: heading(),
                     "What is HTML?",
                   ),
                   subtitle: Text(
@@ -33,6 +35,7 @@ class IntroductionScreen extends StatelessWidget {
               Card(
                 child: ListTile(
                   title: Text(
+                    style: heading(),
                     "History and Versions of HTML",
                   ),
                   subtitle: Column(
@@ -81,6 +84,7 @@ class IntroductionScreen extends StatelessWidget {
               Card(
                 child: ListTile(
                   title: Text(
+                    style: heading(),
                     "Importance of HTML in Web Development",
                   ),
                   subtitle: Column(
