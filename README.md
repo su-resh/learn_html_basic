@@ -1,16 +1,20 @@
-# learn_html_basic
+# Learn HTML Basic
 
-A new Flutter project.
+Welcome to the **Learn HTML Basic** project! This Flutter application is designed to help students learn the fundamentals of HTML and earn a certificate upon course completion. Whether you're a beginner looking to start your web development journey or someone seeking to brush up on your HTML skills, this app is for you.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- **Interactive Lessons**: Engaging and easy-to-follow lessons covering the basics of HTML.
+- **Quizzes**: Assess your knowledge with quizzes after each lesson.
+- **Progress Tracking**: Keep track of your learning progress.
+- **Certificate**: Receive a certificate upon successful completion of the course.
+- **User-Friendly Interface**: Clean and intuitive UI for a seamless learning experience.
 
-A few resources to get you started if this is your first Flutter project:
+## Contact
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+For any questions or suggestions, feel free to reach out:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Email: contact@sureshsubedi.info.np
+- GitHub: [su-resh](https://github.com/su-resh)
+
+Happy learning!
