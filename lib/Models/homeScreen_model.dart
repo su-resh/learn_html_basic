@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learn_html_basic/Screens/documentstructure_screen.dart';
+import 'package:learn_html_basic/Screens/gemeni_screen.dart';
 
 import '../Screens/introduction_screen.dart';
 
@@ -73,6 +74,11 @@ final List<Map<String, dynamic>> gridMap = [
   {
     "image": "assets/images/introduction.png",
     "title": "Certificates",
+  },
+  {
+    "image": "assets/images/introduction.png",
+    "title": "Gemeni",
+    "route": GemeniPage(),
   },
 ];
 
