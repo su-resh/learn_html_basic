@@ -1,7 +1,81 @@
 import 'package:flutter/material.dart';
+import 'package:learn_html_basic/Screens/documentstructure_screen.dart';
+import 'package:learn_html_basic/Screens/headingsAndParagraphs.dart';
+import 'package:learn_html_basic/Screens/htmlAttributes.dart';
+import 'package:learn_html_basic/Screens/tagsElements.dart';
+import 'package:learn_html_basic/Screens/textFormatting.dart';
+
+import '../Screens/introduction_screen.dart';
 
 final List<Map<String, dynamic>> gridMap = [
-  // Your gridMap items
+  {
+    "image": "assets/images/introduction.png",
+    "title": "Introduction to HTML",
+    "route": const IntroductionScreen(),
+  },
+  {
+    "image": "assets/images/documentstructure.png",
+    "title": "HTML Document Structure",
+    "route": const DocumentstructureScreen(),
+  },
+  {
+    "image": "assets/images/htmltags.png",
+    "title": "Tags And Elements",
+    "route": const tagsElementsScreen(),
+  },
+  {
+    "image": "assets/images/attribute.png",
+    "title": "HTML Attributes",
+    "route": const HtmlAttributesScreen(),
+  },
+  {
+    "image": "assets/images/heading.png",
+    "title": "Headings And Paragraphs",
+    "route": const HeadingsParagraphsScreen(),
+  },
+  {
+    "image": "assets/images/textformat.png",
+    "title": "HTML Text Formating",
+    "route": const TextFormattingScreen(),
+  },
+  {
+    "image": "assets/images/link.png",
+    "title": "Links and Anchor Tags",
+  },
+  {
+    "image": "assets/images/introduction.png",
+    "title": "Images",
+    "route": const DocumentstructureScreen(),
+  },
+  {"image": "assets/images/introduction.png", "title": "Tables"},
+  {
+    "image": "assets/images/introduction.png",
+    "title": "HTML Forms",
+  },
+  {
+    "image": "assets/images/introduction.png",
+    "title": "Semantic Elements",
+  },
+  {
+    "image": "assets/images/introduction.png",
+    "title": "HTML comments",
+  },
+  {
+    "image": "assets/images/introduction.png",
+    "title": "HTML Entities",
+  },
+  {
+    "image": "assets/images/introduction.png",
+    "title": "HTML Iframes",
+  },
+  {
+    "image": "assets/images/introduction.png",
+    "title": "Embeding Media",
+  },
+  {
+    "image": "assets/images/introduction.png",
+    "title": "Certificates",
+  }
 ];
 
 class GridB extends StatefulWidget {
@@ -24,11 +98,13 @@ class GridBState extends State<GridB> {
           padding: const EdgeInsets.all(10.0),
           child: InkWell(
             onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => gridMap[index]["route"]),
-              );
+              if (gridMap[index]["route"] != null) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => gridMap[index]["route"]),
+                );
+              }
             },
             child: Container(
               decoration: BoxDecoration(
@@ -46,29 +122,33 @@ class GridBState extends State<GridB> {
                 children: [
                   Image.asset(
                     gridMap[index]["image"],
-                    height: 100,
-                    width: 100,
+                    height: 80, // Reduced height to fit within constraints
+                    width: 80,
                   ),
                   const SizedBox(
                     height: 12,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Text(
-                        gridMap[index]["title"],
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 12),
-                      ),
-                      const Icon(
-                        Icons.lock,
-                        size: 25,
-                        color: Colors.black,
-                      ),
-                    ],
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Flexible(
+                          child: Text(
+                            gridMap[index]["title"],
+                            textAlign: TextAlign.left,
+                            style: const TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 11), // Adjust font size
+                          ),
+                        ),
+                        const Icon(
+                          Icons.lock,
+                          size: 15,
+                        ),
+                      ],
+                    ),
                   ),
-                  const SizedBox(height: 8),
                 ],
               ),
             ),
