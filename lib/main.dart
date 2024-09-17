@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learn_html_basic/Screens/splash_screen.dart';
+import 'package:learn_html_basic/Screens/home_screen.dart';
 
 class learn_html extends StatelessWidget {
   const learn_html({super.key});
@@ -9,7 +9,7 @@ class learn_html extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Learn HTML Basic",
-      home: SplashScreen(),
+      home: Homescreen(),
     );
   }
 }

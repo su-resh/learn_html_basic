@@ -3,14 +3,14 @@ import 'package:learn_html_basic/Components/quizValidator.dart';
 import 'package:learn_html_basic/Components/quizcomponent.dart';
 import 'package:learn_html_basic/Themes/text_size.dart';
 
-class HtmlAttributesScreen extends StatefulWidget {
-  const HtmlAttributesScreen({super.key});
+class TableScreen extends StatefulWidget {
+  const TableScreen({super.key});
 
   @override
-  _HtmlAttributesScreenState createState() => _HtmlAttributesScreenState();
+  _TableScreenState createState() => _TableScreenState();
 }
 
-class _HtmlAttributesScreenState extends State<HtmlAttributesScreen> {
+class _TableScreenState extends State<TableScreen> {
   final TextEditingController _nameController = TextEditingController();
   final List<String> _selectedAnswers = List.filled(3, '');
 
@@ -47,7 +47,7 @@ class _HtmlAttributesScreenState extends State<HtmlAttributesScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('HTML Attributes'),
+        title: const Text('HTML Tables'),
         centerTitle: true,
       ),
       body: Padding(
@@ -57,15 +57,15 @@ class _HtmlAttributesScreenState extends State<HtmlAttributesScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Existing content
+              // Content Section
               Card(
                 child: ListTile(
                   title: Text(
                     style: heading(),
-                    "What are HTML Attributes?",
+                    "Introduction to HTML Tables",
                   ),
                   subtitle: const Text(
-                    "HTML attributes provide additional information about elements. They are always placed in the opening tag and usually come in name/value pairs like name='value'.",
+                    "HTML tables are used to display data in a tabular format. Tables consist of rows and columns, with each cell containing data.",
                   ),
                 ),
               ),
@@ -73,10 +73,10 @@ class _HtmlAttributesScreenState extends State<HtmlAttributesScreen> {
                 child: ListTile(
                   title: Text(
                     style: heading(),
-                    "Common HTML Attributes",
+                    "Basic Table Structure",
                   ),
                   subtitle: const Text(
-                    '''1. id: Specifies a unique id for an element.\n2. class: Specifies one or more class names for an element.\n3. style: Adds inline CSS styles.\n4. href: Specifies the URL for links.\n5. src: Specifies the source file for images or media.''',
+                    '''A basic HTML table is defined using the <table> tag. Inside this tag, you use <tr> for table rows, <th> for table headers, and <td> for table data.\n\nExample:\n<table>\n  <tr>\n    <th>Header 1</th>\n    <th>Header 2</th>\n  </tr>\n  <tr>\n    <td>Data 1</td>\n    <td>Data 2</td>\n  </tr>\n</table>''',
                   ),
                 ),
               ),
@@ -84,10 +84,10 @@ class _HtmlAttributesScreenState extends State<HtmlAttributesScreen> {
                 child: ListTile(
                   title: Text(
                     style: heading(),
-                    "Example of an Attribute",
+                    "Table Headers - <th>",
                   ),
                   subtitle: const Text(
-                    '''<img src="image.jpg" alt="Sample Image" width="500" height="600">\nIn this example:\n- src: Specifies the location of the image.\n- alt: Provides alternative text.\n- width & height: Define the size of the image.''',
+                    '''The <th> tag defines a header cell in a table. It is bold and centered by default.\n\nExample:\n<table>\n  <tr>\n    <th>Header 1</th>\n    <th>Header 2</th>\n  </tr>\n  <tr>\n    <td>Data 1</td>\n    <td>Data 2</td>\n  </tr>\n</table>''',
                   ),
                 ),
               ),
@@ -95,10 +95,10 @@ class _HtmlAttributesScreenState extends State<HtmlAttributesScreen> {
                 child: ListTile(
                   title: Text(
                     style: heading(),
-                    "Multiple Attributes",
+                    "Table Data - <td>",
                   ),
                   subtitle: const Text(
-                    "You can use multiple attributes in a single tag, separated by spaces. They must be defined within the opening tag.",
+                    '''The <td> tag defines a standard cell in a table. It is used inside <tr> tags to represent table data.\n\nExample:\n<table>\n  <tr>\n    <td>Data 1</td>\n    <td>Data 2</td>\n  </tr>\n</table>''',
                   ),
                 ),
               ),
@@ -106,40 +106,46 @@ class _HtmlAttributesScreenState extends State<HtmlAttributesScreen> {
                 child: ListTile(
                   title: Text(
                     style: heading(),
-                    "Global Attributes",
+                    "Table Row - <tr>",
                   ),
                   subtitle: const Text(
-                    '''Some attributes are global and can be applied to any HTML element:\n1. title: Adds a tooltip when hovering.\n2. lang: Defines the language of the document or element.\n3. data-: Custom attributes used to store extra information.''',
+                    '''The <tr> tag defines a row in a table. It is used to group header or data cells.\n\nExample:\n<table>\n  <tr>\n    <td>Data 1</td>\n    <td>Data 2</td>\n  </tr>\n</table>''',
                   ),
                 ),
               ),
               Card(
                 child: ListTile(
                   title: Text(
-                    "Custom Data Attributes",
                     style: heading(),
+                    "Table Attributes",
                   ),
                   subtitle: const Text(
-                    "The data-* attribute allows you to store custom data on HTML elements. It can be used for data processing purposes in JavaScript.",
+                    '''You can use attributes to enhance tables:\n- <table border="1">: Adds a border around the table.\n- <caption>: Adds a title to the table.\n- <colspan>: Specifies how many columns a cell should span.\n- <rowspan>: Specifies how many rows a cell should span.''',
                   ),
                 ),
               ),
+              Card(
+                child: ListTile(
+                  title: Text(
+                    "Example of a Table with Attributes",
+                    style: heading(),
+                  ),
+                  subtitle: const Text(
+                    '''<table border="1">\n  <caption>Sample Table</caption>\n  <tr>\n    <th>Header 1</th>\n    <th>Header 2</th>\n  </tr>\n  <tr>\n    <td colspan="2">Merged Cell</td>\n  </tr>\n  <tr>\n    <td>Data 1</td>\n    <td>Data 2</td>\n  </tr>\n</table>''',
+                  ),
+                ),
+              ),
+
               // Quiz Section
-              const SizedBox(height: 20), // Adds space before the form
+              const SizedBox(height: 20.0),
               const Text(
                 "Quiz Time!",
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 10.0),
               QuizComponent(
-                question:
-                    "What does the 'src' attribute specify in an <img> tag?",
-                options: const [
-                  "The URL of the image.",
-                  "The alternative text for the image.",
-                  "The size of the image.",
-                  "The type of the image."
-                ],
+                question: "Which tag is used to define a table in HTML?",
+                options: const ["<table>", "<tr>", "<td>", "<th>"],
                 onAnswerSelected: (selectedAnswer) {
                   setState(() {
                     _selectedAnswers[0] = selectedAnswer;
@@ -147,9 +153,13 @@ class _HtmlAttributesScreenState extends State<HtmlAttributesScreen> {
                 },
               ),
               QuizComponent(
-                question:
-                    "Which attribute is used to define a unique identifier for an element?",
-                options: const ["id", "class", "style", "href"],
+                question: "What is the purpose of the <th> tag?",
+                options: const [
+                  "Defines a table cell",
+                  "Defines a table header cell",
+                  "Defines a table row",
+                  "Defines a table caption"
+                ],
                 onAnswerSelected: (selectedAnswer) {
                   setState(() {
                     _selectedAnswers[1] = selectedAnswer;
@@ -157,13 +167,12 @@ class _HtmlAttributesScreenState extends State<HtmlAttributesScreen> {
                 },
               ),
               QuizComponent(
-                question:
-                    "What is the purpose of the 'data-*' attribute in HTML?",
+                question: "How do you specify a border for a table?",
                 options: const [
-                  "To store custom data.",
-                  "To define the document's language.",
-                  "To add a tooltip.",
-                  "To specify the URL of a link."
+                  '<table border="1">',
+                  '<table width="1">',
+                  '<table cellpadding="1">',
+                  '<table cellspacing="1">'
                 ],
                 onAnswerSelected: (selectedAnswer) {
                   setState(() {

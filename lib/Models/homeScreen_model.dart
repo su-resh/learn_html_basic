@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:learn_html_basic/Screens/documentstructure_screen.dart';
+import 'package:learn_html_basic/Screens/formscreens.dart';
 import 'package:learn_html_basic/Screens/headingsAndParagraphs.dart';
 import 'package:learn_html_basic/Screens/htmlAttributes.dart';
+import 'package:learn_html_basic/Screens/tables.dart';
 import 'package:learn_html_basic/Screens/tagsElements.dart';
 import 'package:learn_html_basic/Screens/textFormatting.dart';
 
@@ -21,7 +23,7 @@ final List<Map<String, dynamic>> gridMap = [
   {
     "image": "assets/images/htmltags.png",
     "title": "Tags And Elements",
-    "route": const tagsElementsScreen(),
+    "route": const TagsElementsScreen(),
   },
   {
     "image": "assets/images/attribute.png",
@@ -41,36 +43,17 @@ final List<Map<String, dynamic>> gridMap = [
   {
     "image": "assets/images/link.png",
     "title": "Links and Anchor Tags",
+    "route": const TagsElementsScreen(),
   },
   {
     "image": "assets/images/introduction.png",
-    "title": "Images",
-    "route": const DocumentstructureScreen(),
-  },
-  {"image": "assets/images/introduction.png", "title": "Tables"},
-  {
-    "image": "assets/images/introduction.png",
-    "title": "HTML Forms",
+    "title": "Tables",
+    "route": const TableScreen()
   },
   {
     "image": "assets/images/introduction.png",
-    "title": "Semantic Elements",
-  },
-  {
-    "image": "assets/images/introduction.png",
-    "title": "HTML comments",
-  },
-  {
-    "image": "assets/images/introduction.png",
-    "title": "HTML Entities",
-  },
-  {
-    "image": "assets/images/introduction.png",
-    "title": "HTML Iframes",
-  },
-  {
-    "image": "assets/images/introduction.png",
-    "title": "Embeding Media",
+    "title": "Forms",
+    "route": const FormScreen()
   },
   {
     "image": "assets/images/introduction.png",
@@ -131,7 +114,8 @@ class GridBState extends State<GridB> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 5.0),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Flexible(
                           child: Text(

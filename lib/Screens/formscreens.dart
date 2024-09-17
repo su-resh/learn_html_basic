@@ -3,14 +3,14 @@ import 'package:learn_html_basic/Components/quizValidator.dart';
 import 'package:learn_html_basic/Components/quizcomponent.dart';
 import 'package:learn_html_basic/Themes/text_size.dart';
 
-class HtmlAttributesScreen extends StatefulWidget {
-  const HtmlAttributesScreen({super.key});
+class FormScreen extends StatefulWidget {
+  const FormScreen({super.key});
 
   @override
-  _HtmlAttributesScreenState createState() => _HtmlAttributesScreenState();
+  _FormScreenState createState() => _FormScreenState();
 }
 
-class _HtmlAttributesScreenState extends State<HtmlAttributesScreen> {
+class _FormScreenState extends State<FormScreen> {
   final TextEditingController _nameController = TextEditingController();
   final List<String> _selectedAnswers = List.filled(3, '');
 
@@ -47,7 +47,7 @@ class _HtmlAttributesScreenState extends State<HtmlAttributesScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('HTML Attributes'),
+        title: const Text('HTML Forms'),
         centerTitle: true,
       ),
       body: Padding(
@@ -57,15 +57,15 @@ class _HtmlAttributesScreenState extends State<HtmlAttributesScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Existing content
+              // Content Section
               Card(
                 child: ListTile(
                   title: Text(
                     style: heading(),
-                    "What are HTML Attributes?",
+                    "Introduction to HTML Forms",
                   ),
                   subtitle: const Text(
-                    "HTML attributes provide additional information about elements. They are always placed in the opening tag and usually come in name/value pairs like name='value'.",
+                    "HTML forms are used to collect user input. Forms can include various elements like text fields, checkboxes, radio buttons, and submit buttons.",
                   ),
                 ),
               ),
@@ -73,10 +73,10 @@ class _HtmlAttributesScreenState extends State<HtmlAttributesScreen> {
                 child: ListTile(
                   title: Text(
                     style: heading(),
-                    "Common HTML Attributes",
+                    "Basic Form Structure",
                   ),
                   subtitle: const Text(
-                    '''1. id: Specifies a unique id for an element.\n2. class: Specifies one or more class names for an element.\n3. style: Adds inline CSS styles.\n4. href: Specifies the URL for links.\n5. src: Specifies the source file for images or media.''',
+                    '''A basic HTML form is created using the <form> tag. Inside this tag, you can use elements like <input>, <textarea>, <button>, and <select> to collect user data.\n\nExample:\n<form>\n  <label for="name">Name:</label>\n  <input type="text" id="name" name="name">\n  <input type="submit" value="Submit">\n</form>''',
                   ),
                 ),
               ),
@@ -84,10 +84,10 @@ class _HtmlAttributesScreenState extends State<HtmlAttributesScreen> {
                 child: ListTile(
                   title: Text(
                     style: heading(),
-                    "Example of an Attribute",
+                    "Input Types - <input>",
                   ),
                   subtitle: const Text(
-                    '''<img src="image.jpg" alt="Sample Image" width="500" height="600">\nIn this example:\n- src: Specifies the location of the image.\n- alt: Provides alternative text.\n- width & height: Define the size of the image.''',
+                    '''The <input> tag defines an input control. The type attribute specifies the type of input:\n- text: Single-line text field\n- password: Password field\n- checkbox: Checkbox\n- radio: Radio button\n- submit: Submit button\n\nExample:\n<input type="text" name="username">\n<input type="submit" value="Submit">''',
                   ),
                 ),
               ),
@@ -95,10 +95,10 @@ class _HtmlAttributesScreenState extends State<HtmlAttributesScreen> {
                 child: ListTile(
                   title: Text(
                     style: heading(),
-                    "Multiple Attributes",
+                    "Textarea - <textarea>",
                   ),
                   subtitle: const Text(
-                    "You can use multiple attributes in a single tag, separated by spaces. They must be defined within the opening tag.",
+                    '''The <textarea> tag is used for multi-line text inputs.\n\nExample:\n<textarea name="message" rows="4" cols="50">\nEnter your message here...\n</textarea>''',
                   ),
                 ),
               ),
@@ -106,40 +106,35 @@ class _HtmlAttributesScreenState extends State<HtmlAttributesScreen> {
                 child: ListTile(
                   title: Text(
                     style: heading(),
-                    "Global Attributes",
+                    "Select Menu - <select>",
                   ),
                   subtitle: const Text(
-                    '''Some attributes are global and can be applied to any HTML element:\n1. title: Adds a tooltip when hovering.\n2. lang: Defines the language of the document or element.\n3. data-: Custom attributes used to store extra information.''',
+                    '''The <select> tag creates a drop-down list. Inside <select>, use <option> tags to define the options.\n\nExample:\n<select name="cars">\n  <option value="volvo">Volvo</option>\n  <option value="audi">Audi</option>\n  <option value="mercedes">Mercedes</option>\n</select>''',
                   ),
                 ),
               ),
               Card(
                 child: ListTile(
                   title: Text(
-                    "Custom Data Attributes",
                     style: heading(),
+                    "Form Attributes",
                   ),
                   subtitle: const Text(
-                    "The data-* attribute allows you to store custom data on HTML elements. It can be used for data processing purposes in JavaScript.",
+                    '''- action: URL where the form data will be sent.\n- method: HTTP method (GET or POST) to send form data.\n- enctype: Encoding type for form data (e.g., multipart/form-data for file uploads).''',
                   ),
                 ),
               ),
+
               // Quiz Section
-              const SizedBox(height: 20), // Adds space before the form
+              const SizedBox(height: 20.0),
               const Text(
                 "Quiz Time!",
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 10.0),
               QuizComponent(
-                question:
-                    "What does the 'src' attribute specify in an <img> tag?",
-                options: const [
-                  "The URL of the image.",
-                  "The alternative text for the image.",
-                  "The size of the image.",
-                  "The type of the image."
-                ],
+                question: "Which tag is used to create an HTML form?",
+                options: const ["<form>", "<input>", "<button>", "<textarea>"],
                 onAnswerSelected: (selectedAnswer) {
                   setState(() {
                     _selectedAnswers[0] = selectedAnswer;
@@ -148,8 +143,8 @@ class _HtmlAttributesScreenState extends State<HtmlAttributesScreen> {
               ),
               QuizComponent(
                 question:
-                    "Which attribute is used to define a unique identifier for an element?",
-                options: const ["id", "class", "style", "href"],
+                    "What attribute specifies where the form data will be sent?",
+                options: const ["action", "method", "enctype", "name"],
                 onAnswerSelected: (selectedAnswer) {
                   setState(() {
                     _selectedAnswers[1] = selectedAnswer;
@@ -158,13 +153,8 @@ class _HtmlAttributesScreenState extends State<HtmlAttributesScreen> {
               ),
               QuizComponent(
                 question:
-                    "What is the purpose of the 'data-*' attribute in HTML?",
-                options: const [
-                  "To store custom data.",
-                  "To define the document's language.",
-                  "To add a tooltip.",
-                  "To specify the URL of a link."
-                ],
+                    "What is the default method used for sending form data?",
+                options: const ["GET", "POST", "PUT", "DELETE"],
                 onAnswerSelected: (selectedAnswer) {
                   setState(() {
                     _selectedAnswers[2] = selectedAnswer;

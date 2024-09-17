@@ -1,8 +1,47 @@
 import 'package:flutter/material.dart';
+import 'package:learn_html_basic/Components/quizValidator.dart';
+import 'package:learn_html_basic/Components/quizcomponent.dart';
 import 'package:learn_html_basic/Themes/text_size.dart';
 
-class tagsElementsScreen extends StatelessWidget {
-  const tagsElementsScreen({super.key});
+class TagsElementsScreen extends StatefulWidget {
+  const TagsElementsScreen({super.key});
+
+  @override
+  _TagsElementsScreenState createState() => _TagsElementsScreenState();
+}
+
+class _TagsElementsScreenState extends State<TagsElementsScreen> {
+  final TextEditingController _nameController = TextEditingController();
+  final List<String> _selectedAnswers = List.filled(3, '');
+
+  void _validateAndProceed() {
+    String? errorMessage = QuizValidator.validateForm(
+      _nameController.text.trim(),
+      _selectedAnswers,
+    );
+
+    _showErrorDialog(errorMessage!);
+  }
+
+  void _showErrorDialog(String message) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Error'),
+          content: Text(message),
+          actions: <Widget>[
+            TextButton(
+              child: const Text('OK'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +57,7 @@ class tagsElementsScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              // Existing content
               Card(
                 child: ListTile(
                   title: Text(
@@ -94,6 +134,70 @@ class tagsElementsScreen extends StatelessWidget {
                     "Elements like <img>, <br>, and <hr> are empty elements because they don't contain any content and don't require a closing tag.",
                   ),
                 ),
+              ),
+              // Quiz Section
+              const SizedBox(height: 20), // Adds space before the quiz
+              const Text(
+                "Quiz Time!",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 10.0),
+              QuizComponent(
+                question: "What is an example of a self-closing tag?",
+                options: const ["<p>", "<div>", "<img>", "<span>"],
+                onAnswerSelected: (selectedAnswer) {
+                  setState(() {
+                    _selectedAnswers[0] = selectedAnswer;
+                  });
+                },
+              ),
+              QuizComponent(
+                question: "What does the 'href' attribute specify?",
+                options: const [
+                  "The ID of the element",
+                  "The CSS class of the element",
+                  "The URL for links",
+                  "The size of the image"
+                ],
+                onAnswerSelected: (selectedAnswer) {
+                  setState(() {
+                    _selectedAnswers[1] = selectedAnswer;
+                  });
+                },
+              ),
+              QuizComponent(
+                question: "Which of the following is a valid HTML element?",
+                options: const ["<html>", "<text>", "<field>", "<content>"],
+                onAnswerSelected: (selectedAnswer) {
+                  setState(() {
+                    _selectedAnswers[2] = selectedAnswer;
+                  });
+                },
+              ),
+              const SizedBox(height: 10.0),
+              TextField(
+                controller: _nameController,
+                decoration: const InputDecoration(
+                  labelText: 'Enter your name',
+                  border: OutlineInputBorder(),
+                ),
+              ),
+              const SizedBox(height: 10.0),
+              ElevatedButton(
+                onPressed: _validateAndProceed,
+                style: ButtonStyle(
+                  backgroundColor: WidgetStateProperty.all(Colors.black),
+                  foregroundColor: WidgetStateProperty.all(Colors.white),
+                  minimumSize: WidgetStateProperty.all(
+                      const Size(double.infinity, 50)), // Full width, 50 height
+                  shape: WidgetStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                      borderRadius:
+                          BorderRadius.circular(8.0), // Reduced radius
+                    ),
+                  ),
+                ),
+                child: const Text('Submit'),
               ),
             ],
           ),
